@@ -1,0 +1,264 @@
+/* 基本スタイル設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0d0e12;
+    color: #e6e6ed;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
+}
+
+/* ヘッダーナビゲーション */
+.site_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(13, 14, 18, 0.8), transparent);
+}
+
+.header_logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.header_nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    transition: opacity 0.3s;
+}
+
+.header_nav a:hover {
+    opacity: 0.6;
+}
+
+/* ヒーロービュー */
+.hero_view {
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+}
+
+/* オーバーレイグラデーション＆コンテンツ */
+.hero_overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: radial-gradient(circle at center, rgba(13, 14, 18, 0.4) 0%, rgba(13, 14, 18, 0.85) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero_content {
+    max-width: 650px;
+}
+
+.event_date {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #8c90a6;
+    margin-bottom: 10px;
+}
+
+.event_title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin: 0 0 15px 0;
+    color: #ffffff;
+}
+
+.event_subtitle {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #d1d5e5;
+    margin-bottom: 30px;
+}
+
+.btn_primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: #ffffff;
+    color: #0d0e12;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn_primary:hover {
+    transform: translateY(-3px);
+    background-color: #e0e0e0;
+}
+
+/* 背景スライド移動アニメーション */
+.hero_view_container {
+    display: flex;
+    width: 350%;
+    height: 100%;
+    animation: endless-scroll 30s linear infinite;
+    filter: brightness(0.7);
+}
+
+.hero_view_container img {
+    width: calc(100% / 14);
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes endless-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 共通セクションスタイル */
+.section_container {
+    padding: 100px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section_inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section_title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    position: relative;
+}
+
+/* ABOUT */
+.concept_lead {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.concept_text {
+    color: #a0a5b8;
+    line-height: 2;
+}
+
+/* ARTISTS GRID */
+.artist_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.artist_card {
+    background: #161820;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.artist_card:hover {
+    transform: translateY(-6px);
+}
+
+.artist_card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.artist_info {
+    padding: 15px 20px;
+}
+
+.artist_info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.artist_info p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #7d8296;
+}
+
+/* INFO (テーブルレイアウト) */
+.info_list {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px 0;
+    line-height: 1.8;
+}
+
+.info_list dt {
+    color: #7d8296;
+    font-weight: 500;
+}
+
+.info_list dd {
+    margin: 0;
+    color: #ffffff;
+}
+
+/* FOOTER */
+.site_footer {
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #5d6173;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .site_header {
+        padding: 15px 20px;
+    }
+    
+    .header_nav {
+        display: none; /* スマホ用ナビゲーションは必要に応じて追加 */
+    }
+
+    .event_title {
+        font-size: 48px;
+    }
+
+    .info_list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .info_list dt {
+        margin-top: 12px;
+    }
+}
