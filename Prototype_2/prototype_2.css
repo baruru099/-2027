@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+
+.hero_view {
+    width: 100%;
+    height: 95vh;
+    overflow: hidden; /* 横スクロールバーを非表示にする */
+}
+
+.hero_view_container {
+    display: flex; /* Flexboxに変更すると画像の幅計算が安定します */
+    width: 350%;   /* 画像2セット分で横幅200% */
+    height: 100%;
+    /* 無限ループアニメーション指定（20秒かけて等速で左へ移動） */
+    animation: endless-scroll 30s linear infinite;
+}
+
+/* 各画像の幅を均等に指定 */
+.hero_view_container img {
+    width: calc(100% / 14); /* 14枚の画像を均等配置 */
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* ちょうど半分（1セット分 = -50%）移動したら位置を0にリセットするアニメーション */
+@keyframes endless-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
