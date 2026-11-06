@@ -262,3 +262,16 @@ body {
         margin-top: 12px;
     }
 }
+
+/* 初期状態は消しておく */
+.fade_in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 画面に入ったら付与されるクラス */
+.fade_in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

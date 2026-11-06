@@ -543,3 +543,28 @@ footer {
     .overview_list .row { grid-template-columns: 1fr; gap: 6px; }
     .scroll_top { right: 20px; bottom: 20px; }
 }
+
+/* 背景スライド移動アニメーション */
+.hero_view_container {
+    display: flex;
+    width: 350%;
+    height: 100%;
+    animation: endless-scroll 30s linear infinite;
+    filter: brightness(0.7);
+}
+
+.hero_view_container img {
+    width: calc(100% / 14);
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes endless-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

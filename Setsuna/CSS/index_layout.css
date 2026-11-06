@@ -4,7 +4,7 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-family: "游明朝", "Yu Mincho", YuMincho, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "MS P明朝", "MS 明朝", serif;
     color: #333;
     background-color: #fff;
     line-height: 1.6;
@@ -46,39 +46,26 @@ header a span {
 /* ==========================================
    Hero View
    ========================================== */
+/* ヒーロービュー */
 .hero_view {
+    position: relative;
     width: 100%;
-    height: 90vh;
+    height: 95vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: brightness(0);
-    transition: filter 0.5s ease-in 0.5s;
 }
 
 .hero_view.visible {
     filter: brightness(1);
 }
 
-.hero_view div {
-    width: 100%;
-    height: 100%;
-}
-
 .hero_view span {
     position: absolute;
-    left: 2vw;
-    bottom: 3vh;
+    right: 2vw;
+    bottom: 6vh;
     color: rgb(255, 255, 255);
     font-family: "Cutive Mono", monospace;
     font-size: 1.3rem;
-}
-
-.hero_view img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    z-index: 2;
 }
 
 /* メインビジュアルエリアを画面背後に固定 */
@@ -89,6 +76,42 @@ header a span {
     width: 100%;
     z-index: -1;
     /* 背面に配置 */
+}
+.hero_view div {
+    height: 100%;
+}
+/* 背景スライド移動アニメーション */
+.hero_view_container {
+    display: flex;
+    width: 350%;
+    height: 100%;
+    animation: endless-scroll 30s linear infinite;
+    filter: brightness(0.7);
+    z-index: 1;
+}
+
+.hero_view_container img {
+    width: calc(100% / 14);
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes endless-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    width: 200px;
 }
 
 /* 後続のコンテンツエリアを前に出す */
@@ -120,8 +143,8 @@ main {
 }
 .concept {
   /* 方眼紙模様に必須のスタイル */
-  background-image: linear-gradient(0deg, transparent calc(100% - 1px), #f0f0f0 calc(100% - 1px)),
-                    linear-gradient(90deg, transparent calc(100% - 1px), #f0f0f0 calc(100% - 1px));
+  background-image: linear-gradient(0deg, transparent calc(100% - 1px), #eaeaea calc(100% - 1px)),
+                    linear-gradient(90deg, transparent calc(100% - 1px), #eaeaea calc(100% - 1px));
   background-size: 24px 24px;
   background-repeat: repeat;
   background-position: center center;
@@ -208,6 +231,9 @@ main {
    }
    .content div img {
     width: 100%;
+   }
+   .content {
+    background-color: #f9f9f9;
    }
 
 /* ==========================================

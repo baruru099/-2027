@@ -8,73 +8,76 @@
 </head>
 <body>
 
-    <!-- ミニマル・ファインダー固定UI (HUD) -->
+    <!-- レトロ・ファインダー固定UI (HUD) -->
     <div class="finder-hud" id="finder-hud">
-        <!-- 4隅のクロップマーク -->
+        <!-- 4隅の枠マーク -->
         <span class="corner top-left"></span>
         <span class="corner top-right"></span>
         <span class="corner bottom-left"></span>
         <span class="corner bottom-right"></span>
 
-        <!-- スキャンライン（光線演出） -->
+        <!-- CRT走査線ノイズ -->
         <div class="scan-line"></div>
 
-        <!-- 中央ドット＆レティクル -->
-        <div class="crosshair-wrapper">
-            <div class="crosshair"></div>
-            <div class="crosshair-ring"></div>
-        </div>
+        <!-- 中央のクラシッククロスヘア -->
+        <div class="crosshair-wrapper"></div>
 
-        <!-- 縦型スクロールゲージ -->
+        <!-- 縦型ゲージ -->
         <div class="hud-gauge">
             <div class="gauge-bar" id="gauge-bar"></div>
             <span class="gauge-num" id="gauge-num">000</span>
         </div>
 
-        <!-- ステータス -->
+        <!-- カメラ情報表示（上部） -->
         <div class="hud-top">
-            <span class="hud-tag">EXHIBITION // SCANNER</span>
-            <span id="hud-mode">01 / SEARCHING</span>
+            <div class="rec-indicator">
+                <span class="rec-dot"></span>
+                <span>REC</span>
+            </div>
+            <span id="hud-mode">MANUAL / AF-SEARCH</span>
+            <span>BATTERY ▮▮▮▯</span>
         </div>
 
+        <!-- カメラ情報表示（下部） -->
         <div class="hud-bottom">
             <div>
-                <span>STATUS: <strong id="hud-status">SEARCHING...</strong></span>
+                <span>STATUS: <strong id="hud-status">FOCUSING...</strong></span>
             </div>
             <div>
-                <span id="hud-zoom" class="hud-val">FOCUS: 0%</span>
+                <span id="hud-zoom" class="hud-val">ISO 400</span>
+                <span style="margin-left: 15px; color: #f0e6d2;">1998.10.31</span>
             </div>
         </div>
     </div>
 
-    <!-- 固定表示される1枚のイラストキャンバス -->
+    <!-- 1枚のイラストキャンバス -->
     <div class="artwork-viewport" id="artwork-viewport" data-active-step="step-1">
         <div class="artwork-inner">
-            <img class="artwork-img" src="/IMAGE/emeraldgreen.webp" alt="Emerald Coast">
-            <!-- ビューポートオーバーレイ（光のグレイン/レンズフラッシュ） -->
+            <img class="artwork-img" src="/IMAGE/shikun752HY5A0746_TP_V.jpg" alt="Emerald Coast">
+            <!-- ビデオ/フィルムノイズオーバーレイ -->
             <div class="lens-glare"></div>
         </div>
         
         <div class="artwork-caption">
-            <div class="caption-badge">TARGET LOCKED</div>
+            <div class="caption-badge">FRAME #01 / 35mm</div>
             <div class="caption-title">EMERALD COAST</div>
-            <div class="caption-sub">DIGITAL PAINTING / 2026</div>
+            <div class="caption-sub">PHOTO ARCHIVE / 1998</div>
         </div>
     </div>
 
-    <!-- スクロールコントロール領域 -->
+    <!-- スクロール領域 -->
     <main class="scroll-container" id="scroll-container">
 
-        <!-- Step 1: アウトフォーカス（ボケ状態・探索中） -->
-        <section class="view-step" id="step-1" data-step="step-1" data-label="01 / SEARCHING" data-zoom="FOCUS: 20%" data-status="ACQUIRING..."></section>
+        <!-- Step 1: アウトフォーカス（ピンボケ） -->
+        <section class="view-step" id="step-1" data-step="step-1" data-label="AF-SEARCH" data-zoom="ISO 400" data-status="SEARCHING..."></section>
 
-        <!-- Step 2: ピント合致 & スキャン完了 -->
-        <section class="view-step" id="step-2" data-step="step-2" data-label="02 / TARGET LOCKED" data-zoom="FOCUS: 100%" data-status="LOCKED"></section>
+        <!-- Step 2: ピント合致 -->
+        <section class="view-step" id="step-2" data-step="step-2" data-label="TARGET LOCKED" data-zoom="ISO 200" data-status="LOCKED"></section>
 
-        <!-- Step 3: キャプション表示＆ファインダー解除 -->
-        <section class="view-step" id="step-3" data-step="step-3" data-label="03 / FULL VIEW" data-zoom="CLEAR" data-status="COMPLETE"></section>
+        <!-- Step 3: フルビュー -->
+        <section class="view-step" id="step-3" data-step="step-3" data-label="FULL VIEW" data-zoom="ISO 100" data-status="COMPLETE"></section>
 
-        <!-- 展示終了後の通常コンテンツ -->
+        <!-- 展示終了後のコンテンツ -->
         <section class="content" id="content-section">
             <div class="content-inner">
                 <h2>EXHIBITION COMPLETED</h2>
@@ -85,114 +88,98 @@
     </main>
 
 <script>
-        const steps = document.querySelectorAll('.view-step');
-        const viewport = document.getElementById('artwork-viewport');
-        const hud = document.getElementById('finder-hud');
-        const contentSection = document.getElementById('content-section');
-        const scrollContainer = document.getElementById('scroll-container');
+    const steps = document.querySelectorAll('.view-step');
+const viewport = document.getElementById('artwork-viewport');
+const hud = document.getElementById('finder-hud');
+const contentSection = document.getElementById('content-section');
+const scrollContainer = document.getElementById('scroll-container');
 
-        const hudMode = document.getElementById('hud-mode');
-        const hudZoom = document.getElementById('hud-zoom');
-        const hudStatus = document.getElementById('hud-status');
-        const gaugeBar = document.getElementById('gauge-bar');
-        const gaugeNum = document.getElementById('gauge-num');
+const hudMode = document.getElementById('hud-mode');
+const hudStatus = document.getElementById('hud-status');
+const gaugeBar = document.getElementById('gauge-bar');
+const gaugeNum = document.getElementById('gauge-num');
 
-        let isAutofocused = false; // 時間経過によるピント完了フラグ
+let isAutofocused = false;
 
-        // --------------------------------------------------
-        // 1. ページ読み込み後の「時間経過ピント調整」演出
-        // --------------------------------------------------
-        window.addEventListener('DOMContentLoaded', () => {
-            // 初期状態はスクロールを固定
-            scrollContainer.style.overflowY = 'hidden';
+// --------------------------------------------------
+// 1. 初回読み込み：メリハリのある2段階アニメーション
+// --------------------------------------------------
+window.addEventListener('DOMContentLoaded', () => {
+    scrollContainer.style.overflowY = 'hidden';
 
-            // 1.8秒かけて自動でピントを合わせる
-            setTimeout(() => {
-                isAutofocused = true;
+    // 【フェーズ 1】1.2秒後：ピントが「ピシッ」と合致する演出
+    setTimeout(() => {
+        // 画像のぼかしを解除しピントを合致させる
+        viewport.setAttribute('data-active-step', 'step-2');
+        
+        // HUD枠が黄金色に発光・収束するクラスを付与
+        hud.classList.add('mode-detail');
+        if (hudMode) hudMode.textContent = 'AF-LOCK';
+        if (hudStatus) hudStatus.textContent = 'LOCKED';
+    }, 1200);
 
-                // Step 2（ピント合致状態）へ切り替え
+    // 【フェーズ 2】2.0秒後（ピント合致を確認した0.8秒後）：HUDが消去して画像が全画面化
+    setTimeout(() => {
+        isAutofocused = true;
+
+        // 1. カメラUIを非表示にする
+        hud.classList.add('hud-hidden');
+
+        // 2. 画像キャンバスを画面全体（100vw × 100vh）へ拡大する
+        viewport.classList.add('is-fullscreen');
+
+        // 3. スクロールを解禁する
+        scrollContainer.style.overflowY = 'scroll';
+        document.body.classList.add('is-scrollable');
+    }, 2000);
+});
+
+// --------------------------------------------------
+// 2. スクロール連動処理
+// --------------------------------------------------
+scrollContainer.addEventListener('scroll', () => {
+    if (!isAutofocused) return;
+
+    const scrollTop = scrollContainer.scrollTop;
+    const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+    const scrollRatio = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+
+    document.documentElement.style.setProperty('--scroll-ratio', scrollRatio);
+    if (gaugeBar) gaugeBar.style.height = `${scrollRatio * 100}%`;
+    if (gaugeNum) gaugeNum.textContent = String(Math.round(scrollRatio * 100)).padStart(3, '0');
+});
+
+// セクション監視
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!isAutofocused) return;
+
+        if (entry.isIntersecting) {
+            const step = entry.target.getAttribute('data-step');
+
+            if (step === 'step-1') {
                 viewport.setAttribute('data-active-step', 'step-2');
-                hud.classList.add('mode-detail');
-                hudMode.textContent = '02 / TARGET LOCKED';
-                hudZoom.textContent = 'FOCUS: 100%';
-                hudStatus.textContent = 'LOCKED';
+            } else {
+                viewport.setAttribute('data-active-step', step);
+            }
+        }
+    });
+}, { threshold: 0.6 });
 
-                // スクロールを解禁
-                scrollContainer.style.overflowY = 'scroll';
-                document.body.classList.add('is-scrollable');
-            }, 1800); // 1.8秒（お好みの時間に変更可能）
-        });
+steps.forEach(step => observer.observe(step));
 
-        // --------------------------------------------------
-        // 2. ピント合致後の「スクロール連動」演出
-        // --------------------------------------------------
-        scrollContainer.addEventListener('scroll', () => {
-            if (!isAutofocused) return;
+// コンテンツ到達監視
+const contentObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            viewport.classList.add('is-hidden');
+        } else {
+            viewport.classList.remove('is-hidden');
+        }
+    });
+}, { threshold: 0.1 });
 
-            const scrollTop = scrollContainer.scrollTop;
-            const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-            const scrollRatio = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
-
-            // CSS変数更新 & ゲージ更新
-            document.documentElement.style.setProperty('--scroll-ratio', scrollRatio);
-            gaugeBar.style.height = `${scrollRatio * 100}%`;
-            gaugeNum.textContent = String(Math.round(scrollRatio * 100)).padStart(3, '0');
-        });
-
-        // スクロールステップの監視 (Step 2 以降の制御)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!isAutofocused) return; // 自動フォーカス完了前は無視
-
-                if (entry.isIntersecting) {
-                    const step = entry.target.getAttribute('data-step');
-                    const label = entry.target.getAttribute('data-label');
-                    const zoom = entry.target.getAttribute('data-zoom');
-                    const status = entry.target.getAttribute('data-status');
-
-                    // Step 1に逆戻りスクロールした場合はStep 2の状態を維持
-                    if (step === 'step-1') {
-                        viewport.setAttribute('data-active-step', 'step-2');
-                        hud.classList.remove('hud-hidden');
-                        hud.classList.add('mode-detail');
-                        hudMode.textContent = '02 / TARGET LOCKED';
-                        hudZoom.textContent = 'FOCUS: 100%';
-                        hudStatus.textContent = 'LOCKED';
-                        return;
-                    }
-
-                    viewport.setAttribute('data-active-step', step);
-                    hudMode.textContent = label;
-                    hudZoom.textContent = zoom;
-                    hudStatus.textContent = status;
-
-                    if (step === 'step-2') {
-                        hud.classList.remove('hud-hidden');
-                        hud.classList.add('mode-detail');
-                    } else if (step === 'step-3') {
-                        hud.classList.add('hud-hidden'); // 枠を消して完全表示
-                    }
-                }
-            });
-        }, { threshold: 0.6 });
-
-        steps.forEach(step => observer.observe(step));
-
-        // 後続コンテンツ到達時の制御
-        const contentObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    hud.classList.add('hud-hidden');
-                    viewport.classList.add('is-hidden');
-                } else {
-                    if (isAutofocused && viewport.getAttribute('data-active-step') !== 'step-3') {
-                        viewport.classList.remove('is-hidden');
-                    }
-                }
-            });
-        }, { threshold: 0.2 });
-
-        contentObserver.observe(contentSection);
+contentObserver.observe(contentSection);
     </script>
 </body>
 </html>
