@@ -1,13 +1,178 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>ページ選択</title>
-    </head>
-    <body>
-        <a href="prototype.html">ベース</a>
-        <a href="Prototype_1/prototype_1.html">グリッド</a>
-        <a href="Prototype_2/prototype_2.html">スライド</a>
-        <a href="Prototype_3/prototype_3.html">カメラ</a>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刹那/2027</title>
+    <meta name="description" content="ページの概要説明文をここに入力します。">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/index_layout.css">
+
+    <!-- OGP (SNS共有用設定) -->
+    <meta property="og:title" content="刹那/2027">
+    <meta property="og:description" content="ページの概要説明文">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/ogp.jpg">
+
+    <!--Google Fonts設定-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <span>刹那</span>
+        </a>
+    </header>
+    <main>
+        <section class="hero_view">
+            <div>
+                <span>scroll down</span>
+                <!--
+                <img src="IMAGE/yellow.webp" alt="本イベントのロゴ" class="logo">
+                -->
+                <div class="hero_view_container">
+                    <!-- 1セット目 -->
+                    <img src="/IMAGE/20260705032036234_1920x1080.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/blue.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/emeraldgreen.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/lightgreen.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/neongreen400X600.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/purple400X600.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/skyblue400X600.webp" alt="Exhibition Artwork">
+
+                    <!-- 2セット目（無限ループ用複製） -->
+                    <img src="/IMAGE/20260705032036234_1920x1080.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/blue.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/emeraldgreen.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/lightgreen.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/neongreen400X600.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/purple400X600.webp" alt="Exhibition Artwork">
+                    <img src="/IMAGE/skyblue400X600.webp" alt="Exhibition Artwork">
+                </div>
+            </div>
+        </section>
+        <section class="concept">
+            <h2>コンセプト</h2>
+            <p>
+                成安第33期生 span(スパン)、切り取る、刹那展(仮)
+                <br>
+                「大学の4年間は一瞬で終わる」
+                周りの大人は口を揃えてそう言います。満ち足りた青春だからこそすぐに終わってしまうのかもしれません。<br>
+                その過ぎ去っていく時間を、私達は今まさに体感しています。人生の節目のように感じていた20歳が瞬く間に訪れて、気付けば卒業が一年後に控えています。<br>
+                私達はそんな人生におけるほんの一瞬である大学生として生きています。私達がその一瞬の中でも特に心に残っているほんの一瞬を、殊に細かく切り抜き、選び抜いた瞬間をそれぞれの表現で描写しました。<br>
+                <br>
+                この瞬間が私には必要だった。<br>
+                この一瞬に私は息を呑んだ。<br>
+                この一時が私に色をくれた。<br>
+                <br>
+                あなたの人生における大切な一秒を、あなたは覚えていますか。<br>
+                私達の絵を見たときの刹那の感情が、あなたのこれからの人生に刻まれることを願っています。
+            </p>
+        </section>
+        <section class="artist" id="artist">
+            <div class="artist_container">
+                <h2>参加アーティスト</h2>
+                <div></div>
+                <div></div>
+                <a href="abcd.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>abcd</span>
+                </a>
+                <a href="bcde.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>bcde</span>
+                </a>
+                <a href="cdef.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>cdef</span>
+                </a>
+                <a href="defg.html" id="second_line">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>defg</span>
+                </a>
+                <a href="efgh.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>efgh</span>
+                </a>
+                <a href="fghi.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>fghi</span>
+                </a>
+                <a href="ghij.html" id="third_line">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>ghij</span>
+                </a>
+                <a href="hijk.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>hijk</span>
+                </a>
+                <a href="ijkl.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>ijkl</span>
+                </a>
+                <a href="jklm.html" id="fourth_line">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>jklm</span>
+                </a>
+                <a href="klmn.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>klmn</span>
+                </a>
+                <a href="lmno.html">
+                    <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
+                    <span>lmno</span>
+                </a>
+            </div>
+        </section>
+        <section class="content">
+            <h2>コンテンツ</h2>
+            <div>
+                <img src="IMAGE/20260705032036234_1920x1080.webp" alt="">
+                <img src="IMAGE/20260705032036234_1920x1080.webp" alt="">
+                <img src="IMAGE/20260705032036234_1920x1080.webp" alt="">
+            </div>
+        </section>
+        <section class="overview" id="overview">
+            <h2>開催概要</h2>
+            <dl class="overview_list">
+                <dt>会期</dt>
+                <dd>2027年5月1日(金) 〜 5月10日(日)</dd>
+                <dt>時間</dt>
+                <dd>11:00 〜 19:00（最終入場 18:30）</dd>
+                <dt>会場</dt>
+                <dd>GALLERY SETSUNA (京都府...)</dd>
+                <dt>入場料</dt>
+                <dd>無料</dd>
+            </dl>
+        </section>
+    </main>
+
+    <button type="button" class="scroll_top" id="scroll_top">
+        <span>↑<br>Topに戻る</span>
+    </button>
+
+    <footer>
+        <div class="footer_inner">
+            <div class="sns_links">
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+            <p class="copyright">&copy; 2027 刹那 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="JS/heroView.js"></script>
+    <script src="JS/scrollTop.js"></script>
+    <script src="JS/artistDirection.js"></script>
+</body>
+
 </html>

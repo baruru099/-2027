@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刹那/2027 - ART EXHIBITION</title>
+    <meta name="description" content="一瞬の光、二度と戻らない空気感。企画展「刹那/2027」">
+
+    <!-- OGP -->
+    <meta property="og:title" content="刹那/2027">
+    <meta property="og:description" content="一瞬の光、二度と戻らない空気感。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/ogp.jpg">
+
+    <!-- Fonts: Shippori Mincho & YakuHanJP & Cutive Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+    <!-- 背景粒子のキャンバス -->
+    <canvas id="particle_canvas"></canvas>
+
+    <!-- カスタムカーソル -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-follower"><span class="cursor-text">VIEW</span></div>
+
+    <!-- オープニングローダー -->
+    <div class="loader" id="loader">
+        <div class="loader_inner">
+            <span class="loader_logo">刹那 / 2027</span>
+            <div class="loader_bar"><div class="loader_progress"></div></div>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="site_header">
+        <a href="#" class="header_logo">
+            <span>刹那</span>
+            <small>/ 2027</small>
+        </a>
+        <nav class="header_nav">
+            <a href="#concept">CONCEPT</a>
+            <a href="#artist">ARTIST</a>
+            <a href="#overview">OVERVIEW</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ヒーローエリア -->
+        <section class="hero_view">
+            <div class="hero_img_wrapper">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1920&q=80" alt="メインビジュアル">
+                <div class="hero_overlay"></div>
+            </div>
+            <div class="hero_content">
+                <h1 class="hero_title">
+                    <span class="char">刹</span><span class="char">那</span>
+                </h1>
+                <p class="hero_subtitle">SETSUNA EXHIBITION 2027</p>
+                <div class="scroll_indicator">
+                    <span>SCROLL DOWN</span>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- コンセプト -->
+        <section class="concept" id="concept">
+            <div class="concept_inner">
+                <span class="section_label">CONCEPT</span>
+                <h2 class="js-split-text">一瞬の光、二度と戻らない空気感。</h2>
+                <p class="concept_text js-fade-in">
+                    「刹那」とは、シャッターを切るほんの一秒にも満たない瞬間のこと。<br>
+                    私たちが描き出すイラストレーションもまた、<br>
+                    感情が揺れ動いたその「一瞬」をキャンバスに焼き付ける行為です。
+                </p>
+                <p class="concept_text js-fade-in">
+                    本展示「刹那/2027」では、新進気鋭のイラストレーターたちが<br>
+                    それぞれの視点で捉えた“二度と訪れない物語の1ページ”を持ち寄りました。<br>
+                    ファインダー越しに覗くように、作品の中に描かれた光と影、<br>
+                    そして風の匂いを感じていただければ幸いです。
+                </p>
+            </div>
+        </section>
+
+        <!-- アーティストギャラリー -->
+        <section class="artist" id="artist">
+            <div class="artist_inner">
+                <div class="section_header">
+                    <span class="section_label">PARTICIPATING ARTISTS</span>
+                    <h2>参加アーティスト</h2>
+                </div>
+                
+                <div class="artist_grid">
+                    <a href="#abcd" class="artist_card">
+                        <div class="card_img_wrap">
+                            <img src="https://picsum.photos/600/600?random=1" alt="abcd">
+                        </div>
+                        <div class="card_info">
+                            <span class="card_num">01</span>
+                            <span class="card_name">abcd</span>
+                        </div>
+                    </a>
+                    <a href="#bcde" class="artist_card">
+                        <div class="card_img_wrap">
+                            <img src="https://picsum.photos/600/600?random=2" alt="bcde">
+                        </div>
+                        <div class="card_info">
+                            <span class="card_num">02</span>
+                            <span class="card_name">bcde</span>
+                        </div>
+                    </a>
+                    <a href="#cdef" class="artist_card">
+                        <div class="card_img_wrap">
+                            <img src="https://picsum.photos/600/600?random=3" alt="cdef">
+                        </div>
+                        <div class="card_info">
+                            <span class="card_num">03</span>
+                            <span class="card_name">cdef</span>
+                        </div>
+                    </a>
+                    <a href="#defg" class="artist_card">
+                        <div class="card_img_wrap">
+                            <img src="https://picsum.photos/600/600?random=4" alt="defg">
+                        </div>
+                        <div class="card_info">
+                            <span class="card_num">04</span>
+                            <span class="card_name">defg</span>
+                        </div>
+                    </a>
+                    <a href="#efgh" class="artist_card">
+                        <div class="card_img_wrap">
+                            <img src="https://picsum.photos/600/600?random=5" alt="efgh">
+                        </div>
+                        <div class="card_info">
+                            <span class="card_num">05</span>
+                            <span class="card_name">efgh</span>
+                        </div>
+                    </a>
+                    <a href="#fghi" class="artist_card">
+                        <div class="card_img_wrap">
+                            <img src="https://picsum.photos/600/600?random=6" alt="fghi">
+                        </div>
+                        <div class="card_info">
+                            <span class="card_num">06</span>
+                            <span class="card_name">fghi</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 開催概要 -->
+        <section class="overview" id="overview">
+            <div class="overview_inner">
+                <span class="section_label">INFORMATION</span>
+                <h2>開催概要</h2>
+                <dl class="overview_list">
+                    <div class="row">
+                        <dt>会期</dt>
+                        <dd>2027年5月1日(金) 〜 5月10日(日)</dd>
+                    </div>
+                    <div class="row">
+                        <dt>時間</dt>
+                        <dd>11:00 〜 19:00（最終入場 18:30）</dd>
+                    </div>
+                    <div class="row">
+                        <dt>会場</dt>
+                        <dd>GALLERY SETSUNA (京都府...)</dd>
+                    </div>
+                    <div class="row">
+                        <dt>入場料</dt>
+                        <dd>無料</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+    </main>
+
+    <!-- トップに戻るボタン -->
+    <button type="button" class="scroll_top" id="scroll_top" aria-label="トップに戻る">
+        <span class="arrow">↑</span>
+        <span class="text">TOP</span>
+    </button>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer_inner">
+            <div class="footer_brand">刹那 / 2027</div>
+            <div class="sns_links">
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer">X (TWITTER)</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+            </div>
+            <p class="copyright">&copy; 2027 SETSUNA. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="gemini.js"></script>
+</body>
+
+</html>
