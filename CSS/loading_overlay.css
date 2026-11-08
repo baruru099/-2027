@@ -41,3 +41,9 @@
 .no-scroll {
     overflow-y: hidden;
 }
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 10vw;
+    }
+}
