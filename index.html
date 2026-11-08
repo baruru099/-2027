@@ -4,83 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刹那/2027</title>
-    <meta name="description" content="ページの概要説明文をここに入力します。">
+    <title>刹那/2027 - 成安造形大学第33期生 卒業制作展・有志展</title>
+    <meta name="description" content="2027年5月1日〜5月10日開催。成安造形大学第33期生によるグループ展「刹那/2027」の公式サイトです。開催概要、コンセプト、参加アーティスト情報などを掲載中。">
+    <link rel="canonical" href="https://example.com/">
 
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/index_layout.css">
 
     <!-- OGP (SNS共有用設定) -->
-    <meta property="og:title" content="刹那/2027">
-    <meta property="og:description" content="ページの概要説明文">
+    <meta property="og:title" content="刹那/2027 - 成安造形大学第33期生展">
+    <meta property="og:description" content="2027年5月1日〜5月10日開催。成安造形大学第33期生による展覧会「刹那/2027」公式サイト。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://example.com/">
     <meta property="og:image" content="https://example.com/ogp.jpg">
+    <meta property="og:site_name" content="刹那/2027">
+    <meta property="og:locale" content="ja_JP">
 
-    <!--Google Fonts設定-->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="刹那/2027 - 成安造形大学第33期生展">
+    <meta name="twitter:description" content="2027年5月1日〜5月10日開催。成安造形大学第33期生による展覧会「刹那/2027」公式サイト。">
+    <meta name="twitter:image" content="https://example.com/ogp.jpg">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+
+    <!-- 構造化データ（JSON-LD）: イベント情報 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "刹那/2027",
+      "startDate": "2027-05-01T11:00:00+09:00",
+      "endDate": "2027-05-10T19:00:00+09:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "GALLERY SETSUNA",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "京都府",
+          "addressCountry": "JP"
+        }
+      },
+      "image": [
+        "https://example.com/ogp.jpg"
+      ],
+      "description": "成安造形大学第33期生によるグループ展「刹那/2027」",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/InStock"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "刹那/2027 実行委員会"
+      }
+    }
+    </script>
 </head>
 
 <body>
     <header>
         <a href="index.html">
-            <span>刹那</span>
+            <h1>刹那/2027</h1>
         </a>
     </header>
     <main>
         <section class="hero_view">
             <div>
                 <span>scroll down</span>
-                <!--
-                <img src="IMAGE/yellow.webp" alt="本イベントのロゴ" class="logo">
-                -->
                 <div class="hero_view_container">
                     <!-- 1セット目 -->
-                    <img src="IMAGE/20260705032036234_1920x1080.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/blue.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/emeraldgreen.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/lightgreen.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/neongreen400X600.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/purple400X600.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/skyblue400X600.webp" alt="Exhibition Artwork">
+                    <img src="IMAGE/20260705032036234_1920x1080.webp" alt="刹那/2027 メインビジュアル作品">
+                    <img src="IMAGE/blue.webp" alt="展示作品: ブルー">
+                    <img src="IMAGE/emeraldgreen.webp" alt="展示作品: エメラルドグリーン">
+                    <img src="IMAGE/lightgreen.webp" alt="展示作品: ライトグリーン">
+                    <img src="IMAGE/neongreen400X600.webp" alt="展示作品: ネオングリーン">
+                    <img src="IMAGE/purple400X600.webp" alt="展示作品: パープル">
+                    <img src="IMAGE/skyblue400X600.webp" alt="展示作品: スカイブルー">
 
-                    <!-- 2セット目（無限ループ用複製） -->
-                    <img src="IMAGE/20260705032036234_1920x1080.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/blue.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/emeraldgreen.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/lightgreen.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/neongreen400X600.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/purple400X600.webp" alt="Exhibition Artwork">
-                    <img src="IMAGE/skyblue400X600.webp" alt="Exhibition Artwork">
+                    <!-- 2セット目（無限ループ装飾用の重複読み込み防止） -->
+                    <img src="IMAGE/20260705032036234_1920x1080.webp" alt="" aria-hidden="true">
+                    <img src="IMAGE/blue.webp" alt="" aria-hidden="true">
+                    <img src="IMAGE/emeraldgreen.webp" alt="" aria-hidden="true">
+                    <img src="IMAGE/lightgreen.webp" alt="" aria-hidden="true">
+                    <img src="IMAGE/neongreen400X600.webp" alt="" aria-hidden="true">
+                    <img src="IMAGE/purple400X600.webp" alt="" aria-hidden="true">
+                    <img src="IMAGE/skyblue400X600.webp" alt="" aria-hidden="true">
                 </div>
             </div>
         </section>
+
         <section class="concept">
             <h2>コンセプト</h2>
-            <p>
-                成安第33期生 span(スパン)、切り取る、刹那展(仮)
-                <br>
-                「大学の4年間は一瞬で終わる」
-                周りの大人は口を揃えてそう言います。満ち足りた青春だからこそすぐに終わってしまうのかもしれません。<br>
-                その過ぎ去っていく時間を、私達は今まさに体感しています。人生の節目のように感じていた20歳が瞬く間に訪れて、気付けば卒業が一年後に控えています。<br>
-                私達はそんな人生におけるほんの一瞬である大学生として生きています。私達がその一瞬の中でも特に心に残っているほんの一瞬を、殊に細かく切り抜き、選び抜いた瞬間をそれぞれの表現で描写しました。<br>
-                <br>
-                この瞬間が私には必要だった。<br>
-                この一瞬に私は息を呑んだ。<br>
-                この一時が私に色をくれた。<br>
-                <br>
-                あなたの人生における大切な一秒を、あなたは覚えていますか。<br>
-                私達の絵を見たときの刹那の感情が、あなたのこれからの人生に刻まれることを願っています。
-            </p>
+            <div>
+                <p>
+                    <span>成安第33期生 切り取る、刹那展</span>
+                    <br>
+                    「大学の4年間は一瞬で終わる」<br>
+                    周りの大人は口を揃えてそう言います。満ち足りた青春だからこそすぐに終わってしまうのかもしれません。<br>
+                    その過ぎ去っていく時間を、私達は今まさに体感しています。人生の節目のように感じていた20歳が瞬く間に訪れて、気付けば卒業が一年後に控えています。<br>
+                    私達はそんな人生におけるほんの一瞬である大学生として生きています。私達がその一瞬の中でも特に心に残っているほんの一瞬を、殊に細かく切り抜き、選び抜いた瞬間をそれぞれの表現で描写しました。<br>
+                    <br>
+                    <span>この瞬間が私には必要だった。</span><br>
+                    <span>この一瞬に私は息を呑んだ。</span><br>
+                    <span>この一時が私に色をくれた。</span><br>
+                    <br>
+                    あなたの人生における大切な一秒を、あなたは覚えていますか。<br>
+                    私達の絵を見たときの刹那の感情が、あなたのこれからの人生に刻まれることを願っています。
+                </p>
+            </div>
         </section>
         <section class="artist" id="artist">
             <div class="artist_container">
                 <h2>参加アーティスト</h2>
                 <div></div>
                 <div></div>
-                <a href="abcd.html">
+                <a href="abcde.html">
                     <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
                     <span>abcd</span>
                 </a>

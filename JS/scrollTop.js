@@ -1,29 +1,35 @@
-gsap.registerPlugin(ScrollToPlugin);
+(() => {
+  const scrollTop = document.getElementById('scroll_top');
+  const target = document.querySelector('.concept h2');
 
-const scrollTop = document.getElementById('scroll_top');
+  if (!scrollTop) return;
 
-scrollTop.addEventListener('click', () => {
-    gsap.to(window, {
+  if (typeof gsap !== 'undefined' && typeof ScrollToPlugin !== 'undefined') {
+    gsap.registerPlugin(ScrollToPlugin);
+
+    scrollTop.addEventListener('click', () => {
+      gsap.to(window, {
         duration: 2,
         scrollTo: 0,
-        ease: "expo.out"
+        ease: 'expo.out'
+      });
     });
-});
+  }
 
-const target = document.querySelector('.concept h2');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const rect = entry.target.getBoundingClientRect();
-
-        if (entry.isIntersecting || rect.top < 0) {
-            scrollTop.classList.add('is-active');
+  if (target) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // 交差しているか、またはスクロール位置がターゲットより下にある場合にアクティブ化
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+          scrollTop.classList.add('is-active');
         } else {
-            scrollTop.classList.remove('is-active');
+          scrollTop.classList.remove('is-active');
         }
+      });
+    }, {
+      rootMargin: '0px 0px -100px 0px'
     });
-}, {
-    rootMargin: '0px 0px -100px 0px'
-});
 
-observer.observe(target);
+    observer.observe(target);
+  }
+})();

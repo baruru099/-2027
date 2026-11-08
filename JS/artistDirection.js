@@ -1,40 +1,46 @@
-const parent = document.querySelector('.artist_container');
-const secondLine = document.getElementById('second_line');
-const thirdLine = document.getElementById('third_line');
-const fourthLine = document.getElementById('fourth_line');
-let linenum = 0;
-if (!parent) {
-  console.warn('.artist_container が見つかりませんでした');
-} else {
-  const targets = parent.querySelectorAll('a');
+(() => {
+  const parent = document.querySelector('.artist_container');
+  if (!parent) {
+    console.warn('.artist_container が見つかりませんでした');
+    return;
+  }
+
+  const targets = Array.from(parent.querySelectorAll('a'));
+  const lines = [
+    parent,
+    document.getElementById('second_line'),
+    document.getElementById('third_line'),
+    document.getElementById('fourth_line')
+  ].filter(Boolean);
+
+  const ITEMS_PER_LINE = 3;
+  const FADE_DELAY_MS = 100;
+
+  let maxVisibleIndex = 0;
+  let activeIndex = 0;
+
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-  async function main() {
-    let number = 0;
-    for(const target of targets) {
-        number ++;
-        if(number > 3 && linenum === 1) {
-            break;
-        }
-        if(number > 6 && linenum === 2) {
-            break;
-        }
-        if(number > 9 && linenum === 3) {
-            break;
-        }
-        if(number > 12 && linenum === 4) {
-            break;
-        }
-        target.classList.add('is-active');
-        await sleep(100);
+  async function revealCards() {
+    while (activeIndex < maxVisibleIndex && activeIndex < targets.length) {
+      const target = targets[activeIndex];
+      target.classList.add('is-active');
+      activeIndex++;
+      await sleep(FADE_DELAY_MS);
     }
   }
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        linenum ++;
-        main();
+        const lineIndex = lines.indexOf(entry.target);
+        if (lineIndex !== -1) {
+          const targetLimit = (lineIndex + 1) * ITEMS_PER_LINE;
+          if (targetLimit > maxVisibleIndex) {
+            maxVisibleIndex = targetLimit;
+            revealCards();
+          }
+        }
         obs.unobserve(entry.target);
       }
     });
@@ -42,31 +48,20 @@ if (!parent) {
     rootMargin: '0px 0px -200px 0px'
   });
 
-  observer.observe(parent);
-  observer.observe(secondLine);
-  observer.observe(thirdLine);
-  observer.observe(fourthLine);
-}
+  lines.forEach(line => observer.observe(line));
 
-// JS/artistDirection.js またはスクリプトの末尾に追加
+  // ランダムな傾きと位置のズレの適用
+  document.addEventListener('DOMContentLoaded', () => {
+    targets.forEach(card => {
+      const randomRotate = (Math.random() * 6 - 3).toFixed(1);
+      const randomX = (Math.random() * 10 - 5).toFixed(1);
+      const randomY = (Math.random() * 10 - 5).toFixed(1);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.artist_container a');
+      card.style.setProperty('--random-rotate', `${randomRotate}deg`);
+      card.style.setProperty('--random-x', `${randomX}px`);
+      card.style.setProperty('--random-y', `${randomY}px`);
 
-  cards.forEach(card => {
-    // -3deg 〜 +3deg の範囲でランダムな角度を生成
-    const randomRotate = (Math.random() * 6 - 3).toFixed(1);
-    
-    // -5px 〜 +5px の範囲で上下左右のわずかな位置ズレを生成
-    const randomX = (Math.random() * 10 - 5).toFixed(1);
-    const randomY = (Math.random() * 10 - 5).toFixed(1);
-
-    // カスタムプロパティ（CSS変数）として保持させる
-    card.style.setProperty('--random-rotate', `${randomRotate}deg`);
-    card.style.setProperty('--random-x', `${randomX}px`);
-    card.style.setProperty('--random-y', `${randomY}px`);
-    
-    // 初期状態のtransformを設定
-    card.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
+      card.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
+    });
   });
-});
+})();
