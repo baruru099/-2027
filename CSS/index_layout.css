@@ -244,11 +244,11 @@ main {
 .content div {
     display: grid;
     width: 90%;
+    height: fit-content;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
-
-.content div img {
+.content div a img {
     width: 100%;
 }
 
