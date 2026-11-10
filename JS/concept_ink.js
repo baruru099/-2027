@@ -14,8 +14,8 @@ const callback = (entries, observer) => {
 const options = {
     root: null, // ビューポート（画面全体）を基準にする
     // 上・右・下・左 の順で判定エリアを縮小・拡大する
-    rootMargin: '-10px 0px 0px 0px',
-    threshold: 0.8 // 要素が判定エリアに1ピクセルでも入ったら発火
+    rootMargin: '0px',
+    threshold: 0.6 // 要素が判定エリアに1ピクセルでも入ったら発火
 };
 
 // 3. Observerのインスタンス化

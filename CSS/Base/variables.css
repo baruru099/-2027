@@ -17,7 +17,7 @@ a {
 
 h2 {
     margin-bottom: 24px;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     text-align: center;
     letter-spacing: 0.1em;
 }
@@ -26,4 +26,15 @@ h2 {
     --second-dominant-color: #ffffff;
     --third-dominant-color: #ffffff;
     --max-width: 768px;
+}
+/* 通常のテキスト選択時の背景色と文字色 */
+::selection {
+  background-color: #333333; /* ハイライト（選択部分）の背景色 */
+  color: #ffffff;          /* 選択されたテキストの文字色 */
+}
+
+/* Firefox用の古い設定（互換性を高めたい場合） */
+::-moz-selection {
+  background-color: #333333;
+  color: #ffffff;
 }

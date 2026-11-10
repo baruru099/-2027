@@ -17,7 +17,8 @@
 }
 
 .concept p {
-    width: 80%;
+    font-size: 1.13rem;
+    width: 90%;
     max-width: 800px;
     line-height: 2;
 }
@@ -34,6 +35,10 @@
     padding: 20px;
 }
 
+.concept span {
+    display: block;
+    text-align: center;
+}
 .concept span {
     display: block;
     text-align: center;
@@ -68,17 +73,6 @@
 .concept div:first-of-type {
     position: relative;
     z-index: 2;
-}
-
-.concept div p {
-    width: 80%;
-    max-width: 800px;
-    line-height: 2;
-}
-
-.concept span {
-    display: block;
-    text-align: center;
 }
 
 /* ============== Alcohol Ink ============= */
