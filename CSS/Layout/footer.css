@@ -1,0 +1,36 @@
+/* ==========================================
+   Footer
+   ========================================== */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.footer_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sns_links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.sns_links a {
+    color: #fff;
+    transition: opacity 0.3s;
+}
+
+.sns_links a:hover {
+    opacity: 0.7;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}

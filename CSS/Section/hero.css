@@ -1,0 +1,100 @@
+/* ==========================================
+   Hero View
+   ========================================== */
+/* ヒーロービュー */
+.hero_view {
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+}
+
+.hero_view.visible {
+    filter: brightness(1);
+}
+.hero_view .navigation {
+    position: absolute;
+    height: fit-content;
+    left: 1vw;
+    bottom: 6vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.hero_view .navigation button{
+    border: none;
+    background-color: #00000000;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Cutive Mono", monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: fit-content;
+    cursor: pointer;
+}
+.hero_view span {
+    position: absolute;
+    right: 2vw;
+    bottom: 6vh;
+    color: rgb(255, 255, 255);
+    font-family: "Cutive Mono", monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* メインビジュアルエリアを画面背後に固定 */
+.hero_view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    /* 背面に配置 */
+}
+
+.hero_view div {
+    height: 100%;
+}
+
+/* 背景スライド移動アニメーション */
+.hero_view_container {
+    display: flex;
+    width: 350%;
+    height: 100%;
+    animation: endless-scroll 30s linear infinite;
+    z-index: 1;
+}
+
+.hero_view_container img {
+    width: calc(100% / 14);
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes endless-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    width: 200px;
+}
+
+@media (max-width: 768px) {
+    .hero_view_container {
+        width: 650%;
+    }
+}

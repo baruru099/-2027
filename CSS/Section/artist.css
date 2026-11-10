@@ -1,0 +1,82 @@
+/* ==========================================
+   Artist Section
+   ========================================== */
+.artist {
+    padding: 80px 24px;
+    background-color: #f9f9f9;
+}
+
+/* h2を独立したレイアウトにするため、grid内の見出し・空divの余剰要素に対応 */
+.artist_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.artist_container h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+}
+
+/* HTML内の空divを非表示にしてレイアウト崩れを防ぐ */
+.artist_container>div:empty {
+    display: none;
+}
+
+.artist_container a {
+    position: relative;
+    width: 80%;
+    display: block;
+    margin-inline: auto;
+    background: white;
+    padding: 16px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.artist_container a.is-active {
+    opacity: 1;
+}
+
+
+.artist_container a img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.artist_container a span {
+    display: block;
+    padding-top: 12px;
+    font-size: 14px;
+    color: #555;
+    font-family: cursive;
+}
+@media (hover: hover) {
+
+    /* ホバーしたときは角度をリセット（または少し拡大して最前面へ） */
+    .artist_container a:hover {
+        z-index: 10;
+        transform: scale(1.08) rotate(0deg) translate(0, 0) !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media (max-width: 768px) {
+    .artist_container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .artist_container a {
+        width: 90%;
+        padding: 12px;
+    }
+}

@@ -33,3 +33,20 @@
     observer.observe(target);
   }
 })();
+
+//各スクロールボタン
+const navBtn = [
+  { btnId: 'concept_btn', targetSelector: '.concept', block: 'start' },
+  { btnId: 'artist_btn', targetSelector: '.artist', block: 'start' },
+  { btnId: 'content_btn', targetSelector: '.content', block: 'center' },
+  { btnId: 'overview_btn', targetSelector: '.overview', block: 'start' }
+]
+navBtn.forEach(({ btnId, targetSelector, block }) => {
+  const btn = document.getElementById(btnId);
+  const element = document.querySelector(targetSelector);
+  if (btn && element) {
+      btn.addEventListener('click', () => {
+        element.scrollIntoView({ behavior: 'smooth', block });
+      });
+    }
+});

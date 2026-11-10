@@ -1,0 +1,8 @@
+/* 後続のコンテンツエリアを前に出す */
+main {
+    position: relative;
+    margin-top: 90vh;
+    /* ヒーローエリアの分だけ下にずらす */
+    background-color: var(--color-page-background);
+    /* 背景色でヒーローを隠す */
+}

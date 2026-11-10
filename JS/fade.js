@@ -1,7 +1,8 @@
 (() => {
     //fadeする要素をリスト化
     const fadeTargets = [
-        '.concept_container'
+        '.concept_container',
+        '.artist_container h2'
     ]
 
     const targets = document.querySelectorAll(fadeTargets.join(', '));

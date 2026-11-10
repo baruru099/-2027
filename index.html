@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刹那/2027 - 成安造形大学第33期生 卒業制作展・有志展</title>
+    <title>刹那/2027</title>
     <meta name="description"
         content="2027年5月1日〜5月10日開催。成安造形大学第33期生によるグループ展「刹那/2027」の公式サイトです。開催概要、コンセプト、参加アーティスト情報などを掲載中。">
     <link rel="canonical" href="https://example.com/">
 
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/index_layout.css">
-    <link rel="stylesheet" href="CSS/loading_overlay.css">
-    <link rel="stylesheet" href="CSS/fade.css">
 
     <!-- OGP (SNS共有用設定) -->
     <meta property="og:title" content="刹那/2027 - 成安造形大学第33期生展">
@@ -79,11 +77,16 @@
     </header>
     <div class="loading_overlay">
         <span class="text">刹那展2027</span>
-        <script src="JS/loading.js"></script>
     </div>
     <main>
         <section class="hero_view">
             <div>
+                <div class="navigation" aria-label="主要ナビゲーション">
+                    <button id="concept_btn" type="button">concept</button>
+                    <button id="artist_btn" type="button">artist</button>
+                    <button id="content_btn" type="button">content</button>
+                    <button id="overview_btn" type="button">overview</button>
+                </div>
                 <span>scroll down</span>
                 <div class="hero_view_container">
                     <!-- 1セット目 -->
@@ -126,7 +129,7 @@
                     私達の絵を見たときの刹那の感情が、あなたのこれからの人生に刻まれることを願っています。
                 </p>
             </div>
-            <div class="ink_container">
+            <div class="ink_container" aria-hidden="true">
                 <img src="IMAGE/alcohol_ink_1.webp" alt="">
                 <img src="IMAGE/alcohol_ink_1.webp" alt="">
                 <img src="IMAGE/alcohol_ink_2.webp" alt="">
@@ -137,11 +140,9 @@
                 <img src="IMAGE/alcohol_ink_2.webp" alt="">
             </div>
         </section>
-        <section class="artist" id="artist">
+        <section class="artist">
             <div class="artist_container">
                 <h2>参加アーティスト</h2>
-                <div></div>
-                <div></div>
                 <a href="abcde.html">
                     <img src="IMAGE/websiteplanet-dummy-400X400.webp" alt="">
                     <span>abcd</span>
@@ -196,13 +197,13 @@
             <h2>コンテンツ</h2>
             <div>
                 <a href="https://x.com">
-                    <img src="IMAGE/20260705032036234_1920x1080.webp" alt="">
+                    <img id="first_content_img" src="IMAGE/IMG_2819.jpg" alt="">
                 </a>
                 <a href="https://x.com">
-                    <img src="IMAGE/20260705032036234_1920x1080.webp" alt="">
+                    <img id="second_content_img" src="IMAGE/IMG_2820.jpg" alt="">
                 </a>
                 <a href="https://x.com">
-                    <img src="IMAGE/20260705032036234_1920x1080.webp" alt="">
+                    <img id="third_content_img" src="IMAGE/IMG_2879.jpg" alt="">
                 </a>
             </div>
         </section>
@@ -221,7 +222,7 @@
         </section>
     </main>
 
-    <button type="button" class="scroll_top" id="scroll_top">
+    <button type="button" class="scroll_top" id="scroll_top" aria-label="ページ先頭へ戻る">
         <span>↑<br>Topに戻る</span>
     </button>
 
@@ -235,6 +236,7 @@
         </div>
     </footer>
 
+    <script src="JS/loading.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -242,6 +244,8 @@
     <script src="JS/scrollTop.js"></script>
     <script src="JS/artistDirection.js"></script>
     <script src="JS/fade.js"></script>
+    <script src="JS/concept_ink.js"></script>
+    <script src="JS/content.js"></script>
 </body>
 
 </html>

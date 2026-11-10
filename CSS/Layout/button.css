@@ -1,0 +1,45 @@
+/* ==========================================
+   Scroll Top Button
+   ========================================== */
+.scroll_top {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid #222;
+    background: #fff;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.scroll_top.is-active {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+.scroll_top:hover {
+    transform: translateY(-5px);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .scroll_top {
+        right: 10px;
+        bottom: 10px;
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+}

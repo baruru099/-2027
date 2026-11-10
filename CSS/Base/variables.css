@@ -1,0 +1,29 @@
+/* ==========================================
+   Base Styles
+   ========================================== */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "游明朝", "Yu Mincho", YuMincho, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "MS P明朝", "MS 明朝", serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+:root {
+    --first-dominant-color: #ffffff;
+    --second-dominant-color: #ffffff;
+    --third-dominant-color: #ffffff;
+    --max-width: 768px;
+}
