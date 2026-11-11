@@ -66,7 +66,7 @@
     transition: width 0.4s, height 0.4s;
     pointer-events: none;
     /* 枠線がクリック操作を妨げないようにする */
-    filter: saturate(200%) brightness(60%);
+    filter: saturate(300%) brightness(80%);
 }
 
 .content div a:nth-child(1)::after {
@@ -98,7 +98,7 @@
     z-index: 1;
     transition: width 0.4s, height 0.4s;
     pointer-events: none;
-    filter: saturate(200%) brightness(60%);
+    filter: saturate(300%) brightness(80%);
 }
 
 .content div a:nth-child(1)::before {
