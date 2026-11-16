@@ -12,7 +12,9 @@ body {
     line-height: 1.6;
     padding-top: 80px; /* ヘッダー固定用マージン */
 }
-
+body.no-scroll {
+    overflow: hidden;
+}
 a {
     color: inherit;
     text-decoration: none;
@@ -22,6 +24,9 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
 }
 
 /* ヘッダー */
@@ -91,15 +96,39 @@ img {
     z-index: 100;
     top: 0;
     left: 0;
-    cursor: pointer;
+    transition: opacity;
+    overflow: auto;
+}
+.gallery-overlay.is-close {
+    opacity: 0;
 }
 .gallery-overlay.is-active {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    opacity: 1;
+}
+.gallery-overlay button {
+    width: fit-content;
+    height: 90%;
+    background-color: #00000000;
+    padding: 0;
+    margin: auto;
+    border: none;
+    cursor: zoom-in;
+    transition: height 0.3s ease-in-out;
 }
 .gallery-overlay img {
-    height: 90%;
+    margin: 0;
+    height: 100%;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    pointer-events: auto;
+}
+.gallery-overlay img.is-active {
+    opacity: 1;
+}
+.gallery-overlay button.is-zoomed {
+    height: 150%;
+    cursor: zoom-out;
 }
 
 /* ギャラリー（レスポンシブ・グリッド） */
@@ -114,6 +143,7 @@ img {
     border-radius: 4px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -229,6 +259,14 @@ img {
 
     .header {
         height: 70px;
+    }
+    .gallery-overlay button {
+        width: 90%;
+        height: fit-content;
+    }
+    .gallery-overlay img {
+        width: 100%;
+        height: 100%;
     }
 
     .about-container {

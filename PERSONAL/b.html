@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTFOLIO | ふみゅ</title>
     <link rel="stylesheet" href="CSS/abcde.css">
 </head>
+
 <body>
 
     <!-- ヘッダー / ナビゲーション -->
@@ -26,41 +28,46 @@
     <main>
         <!-- ギャラリーセクション -->
         <section id="works" class="section">
+            <h2>Works</h2>
             <!--オーバーレイ-->
-            <div class="gallery-overlay">
-                <img src="" alt="">
+            <div class="gallery-overlay" data-lenis-prevent>
+                <button id="overlay-btn">
+                    <img src="" alt="">
+                </button>
             </div>
             <div class="gallery-grid">
                 <!-- 作品アイテム（必要な数だけコピーして増やしてください） -->
-                <article class="gallery-item">
+                <a class="gallery-item">
                     <div class="image-wrapper">
-                        <img src="IMAGE/Fumi/ふみゅ_刹那展1_.webp" alt="作品タイトル1" loading="lazy">
+                        <img src="IMAGE/Fumi/ふみゅ_刹那展1.webp" alt="作品タイトル1" loading="lazy">
                     </div>
                     <div class="item-info">
-                        <h3>作品タイトル1</h3>
-                        <p>Personal Work / 2026</p>
+                        <h3>藍白</h3>
+                        <p>オリジナルキャラクター【藍白いろは】シリーズ<br>
+                            水辺で遊ぶ時の眩しい笑顔の刹那。</p>
                     </div>
-                </article>
+                </a>
 
-                <article class="gallery-item">
+                <a class="gallery-item">
                     <div class="image-wrapper">
-                        <img src="IMAGE/Fumi/ふみゅ_刹那展2_.webp" alt="作品タイトル2" loading="lazy">
+                        <img src="IMAGE/Fumi/ふみゅ_刹那展2.webp" alt="作品タイトル2" loading="lazy">
                     </div>
                     <div class="item-info">
-                        <h3>作品タイトル2</h3>
-                        <p>Client Work / 2026</p>
+                        <h3>日食の旅路</h3>
+                        <p>オリジナルキャラクター【藍白いろは】シリーズ<br>
+                        冬に灯す。</p>
                     </div>
-                </article>
+                </a>
 
-                <article class="gallery-item">
+                <a class="gallery-item">
                     <div class="image-wrapper">
-                        <img src="IMAGE/Fumi/ふみゅ統合_刹那展3_.webp" alt="作品タイトル2" loading="lazy">
+                        <img src="IMAGE/Fumi/ふみゅ_刹那展3.webp" alt="作品タイトル2" loading="lazy">
                     </div>
                     <div class="item-info">
-                        <h3>作品タイトル2</h3>
-                        <p>Client Work / 2026</p>
+                        <h3>旅の思い出</h3>
+                        <p>旅先で少し休憩したふとした瞬間</p>
                     </div>
-                </article>
+                </a>
             </div>
         </section>
 
@@ -74,7 +81,7 @@
                 <div class="about-text">
                     <h3>ふみゅ</h3>
                     <p>本の装画を描くことを夢見るイラストレーター。<br>白髪キャラが好きで、白髪キャラばかり描いている。</p>
-                    
+
                     <h4>使用環境 / ツール</h4>
                     <p>CLIP STUDIO PAINT / Photoshop / Illustrator</p>
 
@@ -102,5 +109,9 @@
         <p>&copy; 2026 Your Name. All rights reserved.</p>
     </footer>
     <script src="JS/img_click.js"></script>
+    <script src="JS/overlay_img_click.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="JS/smoothscroll.js" defer></script>
 </body>
+
 </html>
