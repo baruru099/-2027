@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>松本蒼真 | 刹那展2027特設サイト</title>
+    <!-- Google Fonts: 上品な明朝体と読みやすいゴシック体を追加 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/abcde.css">
+</head>
+
+<body>
+
+    <!-- ヘッダー / ナビゲーション -->
+    <header class="header">
+        <div class="logo">
+            <a href="#">松本蒼真</a>
+            <span>Illustrator</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="https://baruru099.github.io/-2027/">展示トップに戻る</a></li>
+                <li><button class="works-btn">Works</button></li>
+                <li><button class="about-btn">About</button></li>
+                <li><button class="contact-btn">Contact</button></li>
+            </ul>
+        </nav>
+
+        <!-- ハンバーガーボタン -->
+        <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- ハンバーガーオーバーレイメニュー -->
+        <div class="hamburger-overlay">
+            <ul>
+                <li><a href="https://baruru099.github.io/-2027/">展示トップに戻る</a></li>
+                <li><button class="works-btn">Works</button></li>
+                <li><button class="about-btn">About</button></li>
+                <li><button class="contact-btn">Contact</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- ギャラリーセクション -->
+        <section id="works" class="section works">
+            <h2 >Works</h2>
+            <!-- オーバーレイ -->
+            <div class="gallery-overlay" data-lenis-prevent>
+                <button class="back-btn" aria-label="前の作品">←</button>
+                <button id="overlay-btn" class="overlay-img-btn">
+                    <img src="" alt="">
+                </button>
+                <button class="next-btn" aria-label="次の作品">→</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- 作品アイテム 1 -->
+                <a class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="IMAGE/AO/cafe.webp" alt="藍白" loading="lazy">
+                    </div>
+                    <div class="item-info">
+                        <h3>タイトル</h3>
+                        <p>キャプション</p>
+                    </div>
+                </a>
+
+                <!-- 作品アイテム 2 -->
+                <a class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="IMAGE/AO/idol.webp" alt="日食の旅路" loading="lazy">
+                    </div>
+                    <div class="item-info">
+                        <h3>タイトル</h3>
+                        <p>キャプション</p>
+                    </div>
+                </a>
+
+                <!-- 作品アイテム 3 -->
+                <a class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="IMAGE/AO/window.webp" alt="旅の思い出" loading="lazy">
+                    </div>
+                    <div class="item-info">
+                        <h3>タイトル</h3>
+                        <p>キャプション</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- アバウトセクション -->
+        <section id="about" class="section about-section about">
+            <h2>About</h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="IMAGE/AO/window.webp" alt="松本蒼真 プロフィール画像">
+                </div>
+                <div class="about-text">
+                    <h3>ふみゅ</h3>
+                    <p class="about-bio">自己紹介</p>
+
+                    <div class="about-detail">
+                        <h4>使用環境 / ツール</h4>
+                        <p>CLIP STUDIO PAINT / Photoshop / Illustrator</p>
+                    </div>
+
+                    <div class="about-detail">
+                        <h4>SNS</h4>
+                        <ul class="social-links">
+                            <li><a href="#" target="_blank" rel="noopener">X (Twitter)</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 SETSUNA EXHIBITION. All rights reserved.</p>
+    </footer>
+
+    <script src="JS/img_click.js"></script>
+    <script src="JS/overlay_img_click.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="JS/scroll_to.js"></script>
+    <script src="JS/smoothscroll.js" defer></script>
+    <script src="JS/hamburger.js"></script>
+</body>
+
+</html>
