@@ -11,7 +11,8 @@
     const GALLERY_IMAGE_MAP = {
         'IMAGE/Fumi/ふみゅ_刹那展1.webp': 'IMAGE/Fumi/ふみゅ_刹那展1_.webp',
         'IMAGE/Fumi/ふみゅ_刹那展2.webp': 'IMAGE/Fumi/ふみゅ_刹那展2_.webp',
-        'IMAGE/Fumi/ふみゅ_刹那展3.webp': 'IMAGE/Fumi/ふみゅ_刹那展3_.webp'
+        'IMAGE/Fumi/ふみゅ_刹那展3.webp': 'IMAGE/Fumi/ふみゅ_刹那展3_.webp',
+        'IMAGE/AO/cafe.webp': 'IMAGE/AO/cafe_.webp'
     };
 
     // === DOM要素の取得 ===

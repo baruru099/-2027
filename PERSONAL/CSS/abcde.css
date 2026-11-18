@@ -88,7 +88,7 @@ img {
     gap: 36px;
 }
 
-.nav button {
+.nav button, .nav a {
     font-family: var(--font-serif);
     font-size: 1.15rem;
     font-weight: 500;
@@ -102,7 +102,7 @@ img {
     cursor: pointer;
 }
 
-.nav button::after {
+.nav button::after, .nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -113,11 +113,11 @@ img {
     transition: width 0.3s ease;
 }
 
-.nav button:hover {
+.nav button:hover, .nav a:hover {
     color: var(--text-main);
 }
 
-.nav button:hover::after {
+.nav button:hover::after, .nav a:hover::after {
     width: 100%;
 }
 
