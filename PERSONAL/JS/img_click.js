@@ -14,7 +14,7 @@
         'IMAGE/Fumi/ふみゅ_刹那展3.webp': 'IMAGE/Fumi/ふみゅ_刹那展3_.webp',
         'IMAGE/AO/cafe.webp': 'IMAGE/AO/cafe_.webp',
         'IMAGE/AO/idol.webp': 'IMAGE/AO/idol_.webp',
-        'IMAGE/AO/window.webp': 'IMAGE/AO/window.webp'
+        'IMAGE/AO/window.webp': 'IMAGE/AO/window_.webp'
     };
 
     // === DOM要素の取得 ===
