@@ -1,10 +1,13 @@
 /* 基本設定・カラーパレット */
 :root {
-    --bg-color: #f8f9fa;       /* わずかに青みのある透明感の高い白 */
+    --bg-color: #f8f9fa;
+    /* わずかに青みのある透明感の高い白 */
     --surface-color: #ffffff;
-    --text-main: #23272e;      /* 真っ黒よりも柔らかいチャコール */
+    --text-main: #23272e;
+    /* 真っ黒よりも柔らかいチャコール */
     --text-muted: #6e7681;
-    --accent-color: #4a6b82;   /* 作品名「藍白」にも馴染む落ち着いた藍鼠色 */
+    --accent-color: #4a6b82;
+    /* 作品名「藍白」にも馴染む落ち着いた藍鼠色 */
     --border-color: #e6e8ec;
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
@@ -88,7 +91,8 @@ img {
     gap: 36px;
 }
 
-.nav button, .nav a {
+.nav button,
+.nav a {
     font-family: var(--font-serif);
     font-size: 1.15rem;
     font-weight: 500;
@@ -102,7 +106,8 @@ img {
     cursor: pointer;
 }
 
-.nav button::after, .nav a::after {
+.nav button::after,
+.nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -113,12 +118,114 @@ img {
     transition: width 0.3s ease;
 }
 
-.nav button:hover, .nav a:hover {
-    color: var(--text-main);
+@media (hover:hover) {
+
+    .nav button:hover,
+    .nav a:hover {
+        color: var(--text-main);
+    }
+
+    .nav button:hover::after,
+    .nav a:hover::after {
+        width: 100%;
+    }
 }
 
-.nav button:hover::after, .nav a:hover::after {
-    width: 100%;
+/* ハンバーガーボタン（PCでは非表示） */
+.hamburger-menu {
+    display: none;
+}
+
+/* ハンバーガーオーバーレイ（初期状態は非表示） */
+.hamburger-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(248, 249, 250, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 150;
+}
+
+.hamburger-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hamburger-overlay ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.hamburger-overlay a,
+.hamburger-overlay button {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--text-main);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.hamburger-overlay a:hover,
+.hamburger-overlay button:hover {
+    color: var(--accent-color);
+}
+
+/* スマホ・タブレット表示（768px以下） */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 200; /* オーバーレイより前面に配置 */
+        position: relative;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 26px;
+        height: 1.5px;
+        background-color: var(--text-main);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* 開いた時の「×」アニメーション */
+    .hamburger-menu.is-active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger-menu.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.is-active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
 }
 
 /* 共通セクション設定 */
@@ -269,7 +376,8 @@ img {
 .image-wrapper {
     overflow: hidden;
     background-color: #eef1f5;
-    aspect-ratio: 4 / 3; /* 統一感のある美しい比率に調整 */
+    aspect-ratio: 4 / 3;
+    /* 統一感のある美しい比率に調整 */
 }
 
 .image-wrapper img {

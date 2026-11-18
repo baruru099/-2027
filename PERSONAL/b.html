@@ -23,11 +23,28 @@
         <nav class="nav">
             <ul>
                 <li><a href="https://baruru099.github.io/-2027/">展示トップに戻る</a></li>
-                <li><button id="works-btn">Works</button></li>
-                <li><button id="about-btn">About</button></li>
-                <li><button id="contact-btn">Contact</button></li>
+                <li><button class="works-btn">Works</button></li>
+                <li><button class="about-btn">About</button></li>
+                <li><button class="contact-btn">Contact</button></li>
             </ul>
         </nav>
+
+        <!-- ハンバーガーボタン -->
+        <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- ハンバーガーオーバーレイメニュー -->
+        <div class="hamburger-overlay">
+            <ul>
+                <li><a href="https://baruru099.github.io/-2027/">展示トップに戻る</a></li>
+                <li><button class="works-btn">Works</button></li>
+                <li><button class="about-btn">About</button></li>
+                <li><button class="contact-btn">Contact</button></li>
+            </ul>
+        </div>
     </header>
 
     <main>
@@ -122,7 +139,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 FUMYU. All rights reserved.</p>
+        <p>&copy; 2026 SETSUNA EXHIBITION. All rights reserved.</p>
     </footer>
 
     <script src="JS/img_click.js"></script>
@@ -130,6 +147,7 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="JS/scroll_to.js"></script>
     <script src="JS/smoothscroll.js" defer></script>
+    <script src="JS/hamburger.js"></script>
 </body>
 
 </html>

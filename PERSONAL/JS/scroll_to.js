@@ -5,13 +5,13 @@ window.addEventListener('resize', () => {
 }, { passive: true });
 
 const navBtn = [
-  { btnId: 'works-btn', targetSelector: '.works', block: 'start', offset: 0 },
-  { btnId: 'about-btn', targetSelector: '.about', block: 'start', offset: 0 },
-  { btnId: 'contact-btn', targetSelector: '.contact', block: 'start', offset: 0 }
+  { btnId: '.works-btn', targetSelector: '.works', block: 'start', offset: 0 },
+  { btnId: '.about-btn', targetSelector: '.about', block: 'start', offset: 0 },
+  { btnId: '.contact-btn', targetSelector: '.contact', block: 'start', offset: 0 }
 ];
 
 navBtn.forEach(({ btnId, targetSelector, block, offset }) => {
-  const btn = document.getElementById(btnId);
+  const btn = document.querySelector(btnId);
   const element = document.querySelector(targetSelector);
 
   if (btn && element) {
